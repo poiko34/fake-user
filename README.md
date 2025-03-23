@@ -21,6 +21,11 @@ To use the script, Python version 3.6 or higher and the `Faker` library are requ
     ```bash
     pip install faker
     ```
+    **Or install for linux** using `pip3`:
+
+   ```bash
+    pip3 install faker --break-system-packages
+    ```
 
 ## Usage
 
@@ -30,3 +35,4 @@ To run the script, use the command with arguments that define the country and th
 
 ```bash
 python fakeus.py -c <country> -l <level>
+```
