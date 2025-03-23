@@ -66,8 +66,8 @@ fakeus -c <country> -l <level>
 
 1. **Parameters**:
    - Added a detailed description of the command-line parameters:
-     - `-c` or `--country` for selecting the country (Russia-ru, Poland-pl, USA-us). **Default: `ru`**.
-     - `-l` or `--level` for selecting the level of data (1 — basic data, 2 — passport and credit data). **Default: `1`**.
+   - `-c` or `--country` for selecting the country (Russia-ru, Poland-pl, USA-us). **Default: `ru`**.
+   - `-l` or `--level` for selecting the level of data (1 — basic data, 2 — passport and credit data). **Default: `1`**.
 
 2. **Example Commands**:
    - Included examples for each parameter so users can easily understand how to use the script.
