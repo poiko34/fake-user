@@ -1,15 +1,15 @@
 # Fake Data Generator
 
-This project is designed to generate random fake data, such as name, age, gender, phone number, passport details, and credit history. Data can be generated for different countries: Russia (ru), Poland (pl), USA (us).
+This project is a tool to generate random fake data, such as name, age, gender, phone number, passport details, and credit history. The data can be generated for different countries: Russia (ru), Poland (pl), and the USA (us).
 
 ## Requirements
 
-To use the script, Python version 3.6 or higher and the `Faker` library are required.
+To use the script, you need to have Python version 3.6 or higher installed along with the `Faker` library.
 
 ### Installing Dependencies
 
 1. **Install Python** (if not already installed):
-   - For Ubuntu/Debian-based distributions, you can install Python with the following command:
+   - For **Ubuntu/Debian-based distributions**, you can install Python using the following commands:
 
      ```bash
      sudo apt update
@@ -21,24 +21,38 @@ To use the script, Python version 3.6 or higher and the `Faker` library are requ
     ```bash
     pip install faker
     ```
-    Or install for linux `pip3`:
-   
+
+   Or, for Linux users, install with `pip3`:
+
    ```bash
-    pip3 install faker --break-system-packages
+    pip3 install faker
     ```
+
+3. **Alternatively, for Linux, you can use the provided setup script** to install dependencies:
+   - Navigate to the `fakeus` directory:
+   
+     ```bash
+     cd fakeus
+     ```
+   
+   - Make the setup script executable:
+   
+     ```bash
+     chmod +x setup.sh
+     ```
+
+   - Run the setup script:
+   
+     ```bash
+     ./setup.sh
+     ```
+
 ## Usage
 
 ### Running from the Command Line
 
-To run the script, use the command with arguments that define the country and the level of data generation:
+To run the script, use the command with arguments that specify the country and the level of data generation:
 
-**For windows**
+#### For Windows:
 ```bash
 python fakeus.py -c <country> -l <level>
-```
-**For linux**
-```bash
-python3 fakeus.py -c <country> -l <level>
-
-
-
