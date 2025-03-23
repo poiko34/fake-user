@@ -56,3 +56,14 @@ To run the script, use the command with arguments that specify the country and t
 #### For Windows:
 ```bash
 python fakeus.py -c <country> -l <level>
+```
+
+### Explanation of Changes:
+
+1. **Parameters**:
+   - Added a detailed description of the command-line parameters:
+     - `-c` or `--country` for selecting the country (Russia, Poland, USA).
+     - `-l` or `--level` for selecting the level of data (1 — basic data, 2 — passport and credit data).
+
+2. **Example Commands**:
+   - Included examples for each parameter so users can easily understand how to use the script.
