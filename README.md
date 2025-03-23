@@ -21,12 +21,24 @@ To use the script, Python version 3.6 or higher and the `Faker` library are requ
     ```bash
     pip install faker
     ```
-
+    Or install for linux `pip3`:
+   
+   ```bash
+    pip3 install faker --break-system-packages
+    ```
 ## Usage
 
 ### Running from the Command Line
 
 To run the script, use the command with arguments that define the country and the level of data generation:
 
+**For windows**
 ```bash
 python fakeus.py -c <country> -l <level>
+```
+**For linux**
+```bash
+python3 fakeus.py -c <country> -l <level>
+
+
+
