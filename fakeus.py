@@ -4,6 +4,7 @@ import random
 import faker
 import argparse
 from faker.providers import credit_card
+from datetime import date
 
 # Создаем объект faker
 fake = faker.Faker()
@@ -27,6 +28,11 @@ def determine_gender(name):
     else:
         return "Мужчина"
 
+# Функция вычисления возраста по дате рождения
+def calculate_age(birthdate):
+    today = date.today()
+    return today.year - birthdate.year - ((today.month, today.day) < (birthdate.month, birthdate.day))
+
 # Функция генерации случайной личности
 def generate_extended_fake_personality(level=1, country="ru"):
     # Настройка фейкера в зависимости от страны
@@ -37,12 +43,14 @@ def generate_extended_fake_personality(level=1, country="ru"):
     else:
         fake = faker.Faker('ru_RU')
 
+    # Генерация даты рождения и возраста
+    birthday = fake.date_of_birth(minimum_age=18, maximum_age=60)
+    age = calculate_age(birthday)
+
     # Общие данные
     name = fake.name()
     gender = determine_gender(name)
-    age = random.randint(18, 60)
     phone_number = fake.phone_number()
-    birthday = fake.date_of_birth(minimum_age=18, maximum_age=60)
 
     if level == 1:
         return {
@@ -50,7 +58,7 @@ def generate_extended_fake_personality(level=1, country="ru"):
             "Возраст": age,
             "Пол": gender,
             "Телефон": phone_number,
-            "Дата рождение": birthday
+            "Дата рождения": birthday
         }
 
     if level >= 2:
@@ -62,7 +70,6 @@ def generate_extended_fake_personality(level=1, country="ru"):
         passport_firstname = name.split()[1]
         passport_lastname = name.split()[0]
         passport_patronymic = fake.first_name_male() if country == "ru" else ""
-        passport_birthdate = fake.date_of_birth(minimum_age=18, maximum_age=60)
         passport_gender = gender
         passport_nationality = "Россия" if country == "ru" else ("Polska" if country == "pl" else "USA")
         passport_address = fake.address()
@@ -77,7 +84,8 @@ def generate_extended_fake_personality(level=1, country="ru"):
                 "Имя": name,
                 "Возраст": age,
                 "Пол": gender,
-                "Телефон": phone_number
+                "Телефон": phone_number,
+                "Дата рождения": birthday
             },
             "Паспортные данные": {
                 "Серия паспорта": passport_series,
@@ -88,7 +96,7 @@ def generate_extended_fake_personality(level=1, country="ru"):
                 "Имя": passport_firstname,
                 "Фамилия": passport_lastname,
                 "Отчество": passport_patronymic,
-                "Дата рождения паспорта": passport_birthdate,
+                "Дата рождения паспорта": birthday,
                 "Пол паспорта": passport_gender,
                 "Гражданство": passport_nationality,
                 "Адрес регистрации": passport_address,
