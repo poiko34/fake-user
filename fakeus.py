@@ -42,13 +42,15 @@ def generate_extended_fake_personality(level=1, country="ru"):
     gender = determine_gender(name)
     age = random.randint(18, 60)
     phone_number = fake.phone_number()
+    birthday = fake.date_of_birth(minimum_age=18, maximum_age=60)
 
     if level == 1:
         return {
             "Имя": name,
             "Возраст": age,
             "Пол": gender,
-            "Телефон": phone_number
+            "Телефон": phone_number,
+            "Дата рождение": birthday
         }
 
     if level >= 2:
